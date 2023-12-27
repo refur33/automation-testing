@@ -153,18 +153,82 @@ void func7() // (done)
     Console.WriteLine(a + b);
 };
 
-void func8() // (in process)
-//Пользователь вводит целое положительное число, которое является кубом
-//целого числа N. Найдите число N методом половинного деления.
+void func8() // (done)
+// comment: doesnt work if N is not a interger (will go into loop :( )
+// Пользователь вводит целое положительное число, которое является кубом
+// целого числа N. Найдите число N методом половинного деления.
 {
     Console.WriteLine("Enter number: ");
-    int x = Convert.ToInt32(Console.ReadLine());
-    double a = -1000;
+    double x = Convert.ToDouble(Console.ReadLine());
+    double a = 0;
     double b = 1000;
     double c = (a + b) / 2;
+    if (x == Math.Pow(a, 3))
+    {
+        Console.WriteLine(a);
+    }
+    else if (x == Math.Pow(b, 3))
+    {
+        Console.WriteLine(b);
+    }
+    else
+    {
+        while (x != Math.Pow(c, 3))
+        {
+            c = (a + b) / 2;
+            Console.WriteLine($"test {c}");
+            if (x == Math.Pow(c, 3))
+            {
+                Console.WriteLine(c);
+            }
+            else if (x > Math.Pow(c, 3))
+            {
+                a = c;
+            }
+            else
+            {
+                b = c;
+            }
+        }
+    };
 
 };
 
-func8();
+void func9() // (done)
+// Пользователь вводит 1 число. Найти количество нечетных цифр этого числа.
+{
+    Console.WriteLine("Enter number: ");
+    int a = Convert.ToInt32(Console.ReadLine());
+    int b = 0;
+    while (a > 0)
+    {
+        if (a % 2 == 1)
+        {
+            b++;
+        }
+        a = a / 10;
 
+    }
+    Console.WriteLine($"Amount is {b}");
+}
 
+void func10() // (done)
+//Пользователь вводит 1 число. Найти число, которое является зеркальным
+//отображением последовательности цифр заданного числа, например, задано
+//число 123, вывести 321
+{
+    Console.WriteLine("Enter number: ");
+    int a = Convert.ToInt32(Console.ReadLine());
+    int b = 0;
+    int c = 1;
+    while ((a / Convert.ToInt32(Math.Round(Math.Pow(10, c)))) != 0)
+    {
+        c++;
+    }
+    for (; c >= 1; c--)
+    {
+        b += (a % 10) * Convert.ToInt32(Math.Round(Math.Pow(10, c - 1)));
+        a = a / 10;
+    }
+    Console.WriteLine($"Result is: " + b);
+}
