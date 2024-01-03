@@ -1,11 +1,11 @@
 ﻿int[] createAndFill()
 // создать и заполнить массив, вывести в консоль и передать
 {
-    int[] myArray = new int[7];
+    int[] myArray = new int[9];
     Random rnd = new Random();
     for (int i = 0; i < myArray.Length; i++)
     {
-        myArray[i] = rnd.Next(5);
+        myArray[i] = rnd.Next(50);
     }
 
     for (int i = 0; i < myArray.Length; i++)
@@ -57,7 +57,7 @@ void task4() // done
     Console.ReadLine(); // чтобы консоль не закрывалась
 };
 
-void task5() // in progress
+void task5() // done
 // Посчитать сумму элементов массива с нечетными индексами
 {
     int[] myArray = createAndFill();
@@ -69,7 +69,40 @@ void task5() // in progress
     }
     Console.WriteLine("\n" + sum);
     Console.ReadLine(); // чтобы консоль не закрывалась
-}
+};
 
+void task6() // done
+// Сделать реверс массива (массив в обратном направлении)
+{
+    int[] myArray = createAndFill();
 
-task5();
+    Array.Reverse(myArray);
+    Console.WriteLine();
+    foreach (int number in myArray)
+    {
+        Console.Write(number + ", ");
+    }
+
+    Console.ReadLine(); // чтобы консоль не закрывалась
+};
+
+void task7() // in progress (крешается)
+// Посчитать количество нечетных элементов массива
+{
+    int[] myArray = createAndFill();
+    int index = 0;
+    int oddsNumber = 0;
+    for (index = 0; index > Array.MaxLength; index++)
+    {
+        if (myArray[index] % 2 != 0)
+        {
+            oddsNumber += myArray[index];
+        }
+    }
+
+    Console.WriteLine("\n" + oddsNumber);
+    Console.ReadLine(); // чтобы консоль не закрывалась
+
+};
+
+task7();
