@@ -1,26 +1,30 @@
 ﻿using System;
+namespace homework_d1;
+
 class Program
 {
     static void Main()
     {
-        Square greenSquare = new Square(5, "Green");
-        Square darkblueSquare = new Square(2, "Dark Blue");
-        Square lightblueSquare = new Square(15, "Light Blue");
+        //Doctor irina = new Doctor("ira");
+        Surgeon s = new Surgeon("sam", "head");
+        Doctor sanya = new Surgeon("sanya", "leg");
+        Dentist d = new Dentist("vasya");
+        Dentist dd = new Dentist("kolya");
+        Therapist t = new Therapist("galya");
 
-        Console.WriteLine("Before: ");
-        greenSquare.DisplayInfo();
-        darkblueSquare.DisplayInfo();
-        lightblueSquare.DisplayInfo();
-
-        int newGreenSide = darkblueSquare.GetArea() * 3;
-
-        greenSquare.ChangeSideLength(newGreenSide);
-
-        Console.WriteLine("After: ");
-        greenSquare.DisplayInfo();
-        darkblueSquare.DisplayInfo();
-        lightblueSquare.DisplayInfo();
+        List<Doctor> doctors = new List<Doctor>();
+        doctors.Add(s);
+        //doctors.Add(irina);
+        doctors.Add(sanya);
+        doctors.Add(d);
+        doctors.Add(dd);
+        doctors.Add(t);
+        foreach (Doctor doctor in doctors)
+        {
+            doctor.Treat();
+        }
 
         Console.ReadLine();
     }
 }
+    
