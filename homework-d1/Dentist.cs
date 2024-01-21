@@ -7,9 +7,9 @@ namespace homework_d1
 		{
 
 		}
-        override public void Treat()
+        public void DentistInfo()
         {
-            Console.WriteLine("Dentist treats " + name);
+            Console.WriteLine("Dentist" + name);
         }
     }
 }

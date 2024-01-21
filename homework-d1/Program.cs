@@ -1,30 +1,62 @@
 ﻿using System;
-namespace homework_d1;
+using homework_d1;
 
-class Program
+Surgeon slava = new Surgeon("Vyacheclav", "Mon, Wed, Fri", "Plastic surgery");
+Surgeon sveta = new Surgeon("Svetlana", "Tue, Fri", "Neurosurgery");
+Surgeon sava = new Surgeon("Savelii", "Mon, Sat", "Abdominal surgery");
+Nurse kolya = new Nurse("Nikolai", "Laboratory");
+Nurse nadya = new Nurse("Nadezhda", "Palliative care");
+Dentist dasha = new Dentist("Darya");
+Dentist dima = new Dentist("Dmitry");
+
+
+List<Surgeon> surgeryDepartment = new List<Surgeon>();
+surgeryDepartment.Add(slava);
+surgeryDepartment.Add(sveta);
+surgeryDepartment.Add(sava);
+
+List<Nurse> nursery = new List<Nurse>();
+nursery.Add(kolya);
+nursery.Add(nadya);
+
+List<Dentist> dentalDepartment = new List<Dentist>();
+dentalDepartment.Add(dasha);
+dentalDepartment.Add(dima);
+
+
+
+//foreach (Doctor doctor in doctors)
+//{
+//    doctor.Treat();
+//}
+int option;
+Console.WriteLine("Select required department. Enter:");
+Console.WriteLine("1 - Surgery;");
+Console.WriteLine("2 - Nursery;");
+Console.WriteLine("3 - Dental;");
+option = Convert.ToInt32(Console.ReadLine());
+
+if (option == 1)
 {
-    static void Main()
+    foreach (Surgeon surgeon in surgeryDepartment)
     {
-        //Doctor irina = new Doctor("ira");
-        Surgeon s = new Surgeon("sam", "head");
-        Doctor sanya = new Surgeon("sanya", "leg");
-        Dentist d = new Dentist("vasya");
-        Dentist dd = new Dentist("kolya");
-        Therapist t = new Therapist("galya");
-
-        List<Doctor> doctors = new List<Doctor>();
-        doctors.Add(s);
-        //doctors.Add(irina);
-        doctors.Add(sanya);
-        doctors.Add(d);
-        doctors.Add(dd);
-        doctors.Add(t);
-        foreach (Doctor doctor in doctors)
-        {
-            doctor.Treat();
-        }
-
-        Console.ReadLine();
+        surgeryDepartment.SurgeonInfo;
     }
+}
+else if (option == 2)
+{
+    foreach (Nurse nurse in nursery)
+    {
+        nurse.NurseInfo;
+    }
+}
+else if (option == 3)
+{
+    foreach (Dentist dentist in dentalDepartment)
+    DentistInfo();
+}
+else
+{
+    Console.WriteLine("try again");
 }
     

@@ -1,19 +1,23 @@
 ﻿using System;
+using System.Xml.Linq;
+
 namespace homework_d1
 {
-	public class Surgeon: Doctor
+    public class Surgeon : Doctor
     {
-		public String bodyPart;
-		public Surgeon(String name, String bodyPart): base(name)
-		{
-			this.bodyPart = bodyPart;
-		}
+        public string schedule;
+        public string surgSpecialisation;
 
-		override public void Treat()
-		{
-			Console.WriteLine("Surgeon treats " + name + " " + bodyPart);
-		}
-		
-	}
+        public Surgeon(string name, string schedule, string surgSpecialisation) : base(name)
+        {
+            this.schedule = schedule;
+            this.surgSpecialisation = surgSpecialisation;
+        }
+
+        public void SurgeonInfo()
+        {
+            Console.WriteLine("Surgeon " + name + "works on " + surgSpecialisation + ". His work schedule is: " + schedule);
+        }
+    }
 }
 
