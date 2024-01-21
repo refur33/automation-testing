@@ -40,7 +40,7 @@ if (option == 1)
 {
     foreach (Surgeon surgeon in surgeryDepartment)
     {
-        surgeryDepartment.SurgeonInfo;
+        surgeon.SurgeonInfo;
     }
 }
 else if (option == 2)
@@ -53,7 +53,9 @@ else if (option == 2)
 else if (option == 3)
 {
     foreach (Dentist dentist in dentalDepartment)
-    DentistInfo();
+    {
+        dentist.DentistInfo();
+    }
 }
 else
 {
