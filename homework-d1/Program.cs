@@ -24,11 +24,6 @@ dentalDepartment.Add(dasha);
 dentalDepartment.Add(dima);
 
 
-
-//foreach (Doctor doctor in doctors)
-//{
-//    doctor.Treat();
-//}
 int option;
 Console.WriteLine("Select required department. Enter:");
 Console.WriteLine("1 - Surgery;");
