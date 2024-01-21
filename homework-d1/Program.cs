@@ -36,6 +36,8 @@ Console.WriteLine("2 - Nursery;");
 Console.WriteLine("3 - Dental;");
 option = Convert.ToInt32(Console.ReadLine());
 
+
+//smth wrong here
 if (option == 1)
 {
     foreach (Surgeon surgeon in surgeryDepartment)
